@@ -1,5 +1,5 @@
 import ipaddress
-
+import socket
 prefix = int( ipaddress.IPv6Address( '2001:4c3c:4900::' ) ) # Delta Fiber Nederland
 
 charset = 'ojelwtfn40ryg5z7dbs9mahqv16kc3ipx8u2'
@@ -23,6 +23,9 @@ def decode( estring ):
     return ipaddress.IPv6Address(ip + prefix) 
 
 ipv6address = '2001:4c3c:4915:7200:3f1e::2222'
+print(socket.gethostbyaddr(ipv6address)[0])
+
+
 print("ipv6address:", ipv6address)
 enc = encode(ipv6address )
 print( 'Encoded:', enc )
